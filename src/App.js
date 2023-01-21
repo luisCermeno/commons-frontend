@@ -10,7 +10,7 @@ import Room from './components/Room'
 import Create from './components/Create'
 
 const App = () => {
-  const host = 'http://localhost:8000/'
+  const host = 'https://web-production-96117.up.railway.app/'
   //STATE HOOKS
   const [logged_in, setlogged_in] = useState(localStorage.getItem('token')? true : false)
   const [username, setusername] = useState('')
@@ -149,7 +149,8 @@ const App = () => {
             :
             <Switch>
               <Route exact path='/' > 
-                <LoginPage 
+                <LoginPage
+                host = {host}
                 handle_login={handle_login}
                 handle_signup={handle_signup}
                 errormsg = {errormsg} 
